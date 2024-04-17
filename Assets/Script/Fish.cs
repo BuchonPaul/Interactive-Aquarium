@@ -249,7 +249,7 @@ public class Fish : MonoBehaviour
 	/// </summary>
 	private void UpdatePosition()
 	{
-        Vector3 position = transform.position + new Vector3(swimDirection.x, 0f, swimDirection.z) * swimSpeed * Time.fixedDeltaTime;
+        Vector3 position = transform.position + swimDirection * swimSpeed * Time.fixedDeltaTime;
         transform.position = position;
 	}
 }
