@@ -101,7 +101,7 @@ public class Fish : MonoBehaviour
 			UnityEditor.EditorApplication.isPlaying = false;
 		}
 
-		bodyTransform = transform.Find("Body");
+        bodyTransform = transform.Find("Body");
 		randomOffset = Random.value;
 	}
 
@@ -154,7 +154,7 @@ public class Fish : MonoBehaviour
 		// but smooth fashion.
 		float noiseScale = .5f;
 		float speedPercent = Mathf.PerlinNoise(Time.time * noiseScale + randomOffset, randomOffset);
-		speedPercent = Mathf.Pow(speedPercent, 2);
+		speedPercent = Mathf.Pow(speedPercent, 3);
 		swimSpeed = Mathf.Lerp(swimSpeedMin, swimSpeedMax, speedPercent);
 
 		if (obstacleDetected) return;
