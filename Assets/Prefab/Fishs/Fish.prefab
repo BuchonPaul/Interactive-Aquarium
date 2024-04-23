@@ -105,6 +105,9 @@ MonoBehaviour:
   wanderPeriodDuration: 0.8
   wanderProbability: 0.15
   swimSpeed: 0
+  clearSprite: {fileID: 0}
+  hideSprite: {fileID: 0}
+  fishId: 4
 --- !u!1001 &2586508727163347143
 PrefabInstance:
   m_ObjectHideFlags: 0

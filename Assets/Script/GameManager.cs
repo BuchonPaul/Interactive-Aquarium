@@ -1,24 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    private static GameManager _instance;
     public GameObject[] fishs;
-    // Start is called before the first frame update
+    public TextMeshProUGUI descText;
+    public string debugText = "testManager";
+    public Fish fishToFind;
+    public int fishCount = 0;
+
+    public delegate void updateCardEventHandler(int fishId);
+    public static event updateCardEventHandler UpdateCardEvent;
+
     void Awake()
     {
-        Instance = this;
+        _instance = this;
+    }
+    public static GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new GameManager();
+            }
+
+            return _instance;
+        }
     }
 
-    void Start()
+    private void OnEnable()
     {
+        Fish.FishSelectedEvent += OnFishSelected;
+        RayCastingScript.FishCatchedEvent += OnFishCatched;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        Fish.FishSelectedEvent -= OnFishSelected;
+        RayCastingScript.FishCatchedEvent -= OnFishCatched;
+    }
+
+    private void OnFishSelected(Fish fish)
+    {
+        descText.text = fish.description;
+        fishToFind = fish;
+    }
+    private void OnFishCatched(Fish fish)
+    {
+        if(fish.fishId == fishToFind.fishId)
+        {
+            Debug.Log("Catched:" + fish.fishId);
+            fishCount += 1;
+            UpdateCardEvent.Invoke(fish.fishId);
+        }
+        Debug.Log(fishs.Length);
+        if(fishs.Length  == fishCount) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
     }
 }

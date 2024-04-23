@@ -46,3 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishs:
   - {fileID: 4372286106159926224, guid: fa00e8be44a80af43b572de3a10ee8a2, type: 3}
+  - {fileID: 4372286106159926224, guid: d087d40b3c0141649a983add18209588, type: 3}
+  - {fileID: 4372286106159926224, guid: 90fe21d8032667444b11b020b1f66e60, type: 3}
+  descText: {fileID: 0}
+  debugText: testManager
+  fishToFind: {fileID: 0}

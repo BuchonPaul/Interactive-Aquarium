@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e10c36e758b5a3438719afc0bd70283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: Ceci est un poisson vert
   tankCenterGoal: {fileID: 0}
   obstacleSensingDistance: 5
   swimSpeedMin: 2
@@ -234,6 +235,9 @@ MonoBehaviour:
   wanderPeriodDuration: 0.8
   wanderProbability: 0.15
   swimSpeed: 0
+  clearSprite: {fileID: 21300000, guid: 0e9c1f1145d38594196c062a080c6e18, type: 3}
+  hideSprite: {fileID: 21300000, guid: 6bdf2ef6c299999478a3078c63ff12c8, type: 3}
+  fishId: 3
 --- !u!95 &6330171662216472904
 Animator:
   serializedVersion: 5
