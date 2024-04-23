@@ -1,4 +1,73 @@
-﻿using System.Collections;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RayCastingScript : MonoBehaviour
+{
+    Camera cam;
+    public LayerMask mask;
+    void Start()
+    {
+        cam = Camera.main;
+    }
+
+    void Update()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 100f;
+        mousePos = cam.ScreenToWorldPoint(mousePos);
+        Debug.DrawRay(transform.position, mousePos - transform.position, Color.blue);
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if(Physics.Raycast(ray, out hit,100, mask)) {
+                Debug.Log(hit.transform.name);
+                Destroy(hit.transform.gameObject);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -9,12 +78,12 @@ using UnityEngine.Assertions;
 /// </summary>
 public class Fish : MonoBehaviour
 {
-    public string description;
-    /// <summary>
-    /// A location inside the tank that will be used as a reference point when
-    /// calculating turns to avoid obstacles.
-    /// </summary>
-    public Transform tankCenterGoal;
+
+	/// <summary>
+	/// A location inside the tank that will be used as a reference point when
+	/// calculating turns to avoid obstacles.
+	/// </summary>
+	public Transform tankCenterGoal;
 
 	/// <summary>
 	/// Indicates how close an obstacle must be (in meters) before the fish 
@@ -252,4 +321,56 @@ public class Fish : MonoBehaviour
         Vector3 position = transform.position + swimDirection * swimSpeed * Time.fixedDeltaTime;
         transform.position = position;
 	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class spawnObject : MonoBehaviour
+{
+    public GameObject prefab; // GameObject à instancier
+    public int numberOfObjects = 50; // Nombre d'objets à générer
+
+    void Start()
+    {
+        for (int i = 0; i < numberOfObjects; i++)
+        {
+            // Génère des coordonnées aléatoires sur les axes X et Y entre 0 et 1
+            float randomX = Random.Range(-14f, 14f);
+            float randomY = Random.Range(-7f, 7f);
+
+            // Crée une position en fonction des coordonnées aléatoires
+            Vector3 position = new Vector3(randomX, prefab.transform.position.y, randomY);
+
+            // Génère une rotation aléatoire
+            Quaternion rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+
+            // Instancie l'objet avec la position et la rotation aléatoires
+            Instantiate(prefab, position, rotation);
+        }
+    }
 }

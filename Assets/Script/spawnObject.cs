@@ -12,8 +12,8 @@ public class spawnObject : MonoBehaviour
         for (int i = 0; i < numberOfObjects; i++)
         {
             // Génère des coordonnées aléatoires sur les axes X et Y entre 0 et 1
-            float randomX = Random.Range(-9f, 9f);
-            float randomY = Random.Range(-4f, 4f);
+            float randomX = Random.Range(-14f, 14f);
+            float randomY = Random.Range(-7f, 7f);
 
             // Crée une position en fonction des coordonnées aléatoires
             Vector3 position = new Vector3(randomX, prefab.transform.position.y, randomY);

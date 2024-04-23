@@ -22,7 +22,7 @@ public class RayCastingScript : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit,100, mask)) {
+            if (Physics.Raycast(ray, out hit, 100, mask)) {
                 Debug.Log(hit.transform.name);
                 Destroy(hit.transform.gameObject);
             }
