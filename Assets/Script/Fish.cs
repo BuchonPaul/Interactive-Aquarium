@@ -14,6 +14,7 @@ public class Fish : MonoBehaviour
     public float maxWanderAngle = 45f;
     public float wanderPeriodDuration = 0.8f;
     public float wanderProbability = 0.15f;
+    public float accelProba = 3;
 	[HideInInspector]
 	public float swimSpeed;
     private Vector3 swimDirection
@@ -35,7 +36,14 @@ public class Fish : MonoBehaviour
 	public int fishId;
     void Start()
 	{
-		if (tankCenterGoal == null)
+        swimSpeedMin = Random.Range(0.3f, 0.5f);//0.2f;
+        swimSpeedMax = Random.Range(3f, 4f);//0.6f;
+        maxTurnRateY = Random.Range(3f, 6f);//5f;
+        maxWanderAngle = Random.Range(30f, 60f);//45f;
+        wanderPeriodDuration = Random.Range(0.6f, 1f);//0.8f;
+        wanderProbability = Random.Range(0.1f, 0.2f);//0.15f;
+        accelProba = Random.Range(12f, 14f);
+        if (tankCenterGoal == null)
 		{
 			Debug.LogError("[" + name + "] The tankCenterGoal parameter is required but is null.");
 			UnityEditor.EditorApplication.isPlaying = false;
@@ -52,14 +60,14 @@ public class Fish : MonoBehaviour
 		Wander();
 		AvoidObstacles();
 
-		DrawDebugAids();
+		//DrawDebugAids();
 		UpdatePosition();
 	}
 
 
 	private void OnDrawGizmos()
 	{
-		DrawDebugAids();
+		//DrawDebugAids();
 	}
 
 	void Wiggle()

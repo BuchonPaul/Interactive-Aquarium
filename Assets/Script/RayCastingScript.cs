@@ -25,7 +25,6 @@ public class RayCastingScript : MonoBehaviour
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, 100, mask)) {
-                //Debug.Log(hit.transform.name);
                 FishCatchedEvent?.Invoke(hit.transform.gameObject.GetComponent<Fish>());
                 //Destroy(hit.transform.gameObject);
             }
