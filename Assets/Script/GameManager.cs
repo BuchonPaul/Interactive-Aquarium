@@ -37,12 +37,14 @@ public class GameManager : MonoBehaviour
     {
         Fish.FishSelectedEvent += OnFishSelected;
         RayCastingScript.FishCatchedEvent += OnFishCatched;
+        FootInteraction.FishWalkedEvent += OnFishCatched;
     }
 
     private void OnDisable()
     {
         Fish.FishSelectedEvent -= OnFishSelected;
         RayCastingScript.FishCatchedEvent -= OnFishCatched;
+        FootInteraction.FishWalkedEvent -= OnFishCatched;
     }
 
     private void OnFishSelected(Fish fish)
@@ -52,15 +54,22 @@ public class GameManager : MonoBehaviour
     }
     private void OnFishCatched(Fish fish)
     {
-        if(fish.fishId == fishToFind.fishId)
+        Debug.Log(fish.fishId);
+        if(fishToFind != null)
         {
-            Debug.Log("Catched:" + fish.fishId);
-            fishCount += 1;
-            UpdateCardEvent.Invoke(fish.fishId);
+            if (fish.fishId == fishToFind.fishId)
+            {
+                Debug.Log("Catched:" + fish.fishId);
+                fishCount += 1;
+                fishToFind = null;
+                UpdateCardEvent.Invoke(fish.fishId);
+            }
+            Debug.Log(fishs.Length);
+            if (fishs.Length == fishCount)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            }
         }
-        Debug.Log(fishs.Length);
-        if(fishs.Length  == fishCount) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        }
+
     }
 }

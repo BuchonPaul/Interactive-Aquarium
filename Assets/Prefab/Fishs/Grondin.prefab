@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 6330171662216472904}
   m_Layer: 6
   m_Name: Grondin
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,6 +234,7 @@ MonoBehaviour:
   maxWanderAngle: 45
   wanderPeriodDuration: 0.8
   wanderProbability: 0.15
+  accelProba: 3
   swimSpeed: 0
   clearSprite: {fileID: 21300000, guid: 69f2327cf684ce44085c5bd3ce6c3f0d, type: 3}
   hideSprite: {fileID: 21300000, guid: 6bdf2ef6c299999478a3078c63ff12c8, type: 3}
