@@ -10,6 +10,7 @@ public class BodySourceView : MonoBehaviour
     public BodySourceManager mBodySourceManager;
     public GameObject mJointObject;
     public Vector3 offset;
+    public float zoom = 1f;
     private Dictionary<ulong, GameObject> mBodies = new Dictionary<ulong, GameObject>();
     private List<JointType> _joints = new List<JointType>
     {
@@ -106,8 +107,11 @@ public class BodySourceView : MonoBehaviour
             //Get new target position
             Joint sourceJoint = body.Joints[_joint];
             Vector3 targetPosition = GetVector3FromJoint(sourceJoint);
-            targetPosition.y = 0;
             targetPosition += offset;
+            targetPosition.z *= -1;
+            targetPosition *= zoom;
+/*            targetPosition.y = 3.2f;
+*/
 
             //Get joint, set new position
             Transform jointObject = bodyObject.transform.Find(_joint.ToString());
