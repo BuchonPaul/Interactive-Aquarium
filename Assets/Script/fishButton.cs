@@ -36,28 +36,6 @@ public class fishButton : MonoBehaviour
             Debug.LogWarning("Le prefab du poisson ne contient pas de composant Fish !");
         }
     }
-    private void Update()
-    {
-        /*Fish gm = GameManager.Instance.fishToFind;
-        ColorBlock cb = button.colors;
-
-        if (gm != null)
-        {
-            if (gm.fishId == prefabPoisson.GetComponent<Fish>().fishId)
-            {
-                cb.normalColor = Color.red;
-            }
-            else
-            {
-                cb.normalColor = Color.black;
-            }
-        }
-        else
-        {
-            cb.normalColor = Color.black;
-        }
-        button.colors = cb;*/
-    }
     public void updateCard(int fishId) {
         if (prefabPoisson.GetComponent<Fish>().fishId == fishId)
         {

@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9157070358477114344
 Transform:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 225824508843410210}
   - component: {fileID: 6330171662216472904}
   m_Layer: 6
-  m_Name: Seabass
+  m_Name: bar
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,6 +140,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9157070358477114344}
+  - {fileID: 8224187631406969679}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8886368896368360092
@@ -225,7 +226,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e10c36e758b5a3438719afc0bd70283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Ceci est un poisson vert
+  description: "Le bar commun, poisson embl\xE9matique des c\xF4tes, est reconnu
+    pour sa silhouette fusel\xE9e et sa force dans les courants marins. Il chasse
+    avec agilit\xE9 ses proies, se faufilant habilement entre les rochers pour se
+    reposer \xE0 l'abri des regards."
+  fishName: Bar
   tankCenterGoal: {fileID: 0}
   obstacleSensingDistance: 5
   swimSpeedMin: 2
@@ -236,8 +241,12 @@ MonoBehaviour:
   wanderProbability: 0.15
   accelProba: 3
   swimSpeed: 0
-  clearSprite: {fileID: 21300000, guid: 0e9c1f1145d38594196c062a080c6e18, type: 3}
-  hideSprite: {fileID: 21300000, guid: 6bdf2ef6c299999478a3078c63ff12c8, type: 3}
+  clearSprite: {fileID: 21300000, guid: 5e330b2b76587a040aba1afbd77e7c86, type: 3}
+  hideSprite: {fileID: 21300000, guid: f1e0e13afb295314b963b52c35034d9b, type: 3}
+  siz: {fileID: 21300000, guid: 5a4c2397cb938914da127a8364e93e8d, type: 3}
+  wei: {fileID: 21300000, guid: f90214443dc95024aa8f9c0d58e4e785, type: 3}
+  spe: {fileID: 21300000, guid: 9340b52bbe3e58843992a0f54f0f0d85, type: 3}
+  col: {fileID: 21300000, guid: f4d2389c0c3c78d45b52dd211453c0f7, type: 3}
   fishId: 3
 --- !u!95 &6330171662216472904
 Animator:
@@ -250,6 +259,121 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &8478191700912706724
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7207468872389149428}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.10999999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.10999999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.10999999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.202
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.653
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Name
+      value: SeaBass
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602564128540957456, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 761095978bccfa1479cc6f47daeb888e, type: 2}
+    - target: {fileID: 6684295394808222897, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 761095978bccfa1479cc6f47daeb888e, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3757611294849201576}
+  m_SourcePrefab: {fileID: 100100000, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+--- !u!4 &8224187631406969679 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+  m_PrefabInstance: {fileID: 8478191700912706724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8748804948467919349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+  m_PrefabInstance: {fileID: 8478191700912706724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3757611294849201576
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8748804948467919349}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90aeb77928e5bb84b945c8621809e48a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

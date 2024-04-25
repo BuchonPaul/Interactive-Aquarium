@@ -6,6 +6,7 @@ using UnityEngine.Assertions;
 public class Fish : MonoBehaviour
 {
     public string description;
+    public string fishName;
     public Transform tankCenterGoal;
     public float obstacleSensingDistance = 0.8f;
 	public float swimSpeedMin = 0.2f;
@@ -33,7 +34,12 @@ public class Fish : MonoBehaviour
     public static event FishSelectedEventHandler FishSelectedEvent;
 	public Sprite clearSprite;
 	public Sprite hideSprite;
+	public Sprite siz;
+	public Sprite wei;
+	public Sprite spe;
+	public Sprite col;
 	public int fishId;
+
     void Start()
 	{
         swimSpeedMin = Random.Range(0.3f, 0.5f);//0.2f;

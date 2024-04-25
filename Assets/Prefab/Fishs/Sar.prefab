@@ -120,7 +120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e10c36e758b5a3438719afc0bd70283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Ceci est un poisson gris
+  description: "Le sar commun est un poisson \xE9l\xE9gant que l'on trouve dans les
+    mers. Avec ses rayures argent\xE9es, il ressemble \xE0 un artiste peintre ayant
+    plong\xE9 dans l'eau. Il nage avec gr\xE2ce, se m\xEAlant aux bancs de poissons
+    dans les eaux peu profondes, se r\xE9galant de petits crustac\xE9s et algues. "
+  fishName: Sar
   tankCenterGoal: {fileID: 0}
   obstacleSensingDistance: 5
   swimSpeedMin: 2
@@ -131,8 +135,12 @@ MonoBehaviour:
   wanderProbability: 0.15
   accelProba: 3
   swimSpeed: 0
-  clearSprite: {fileID: 21300000, guid: e0f7fcfe5d530ea4fbe71f4ff59b9173, type: 3}
-  hideSprite: {fileID: 21300000, guid: 6bdf2ef6c299999478a3078c63ff12c8, type: 3}
+  clearSprite: {fileID: 21300000, guid: efa1fe0498bc129418f2795c1d407fba, type: 3}
+  hideSprite: {fileID: 21300000, guid: dbd75f303209c0d4b89d60f680b96a57, type: 3}
+  siz: {fileID: 21300000, guid: cb9dc58c686597e40bb1626df427173a, type: 3}
+  wei: {fileID: 21300000, guid: 83e6d9efd66349b47a4e03f1f41b7905, type: 3}
+  spe: {fileID: 21300000, guid: ce14627d6940d654f9236affb3314678, type: 3}
+  col: {fileID: 21300000, guid: 7258c7de2c3667f4c8ee3c3de78ca951, type: 3}
   fishId: 2
 --- !u!95 &6330171662216472904
 Animator:
