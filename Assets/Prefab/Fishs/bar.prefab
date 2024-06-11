@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 4024287520368113472}
   - component: {fileID: 8314608423574757860}
   - component: {fileID: 225824508843410210}
-  - component: {fileID: 6330171662216472904}
   m_Layer: 6
   m_Name: bar
   m_TagString: Fish
@@ -210,10 +209,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5974391
-  m_Height: 2.7694962
+  m_Radius: 0.3801172
+  m_Height: 2.7021978
   m_Direction: 2
-  m_Center: {x: 0, y: 0.09743911, z: -0.5300695}
+  m_Center: {x: 0.06471641, y: 0.06810419, z: -0.56372035}
 --- !u!114 &225824508843410210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,14 +231,14 @@ MonoBehaviour:
     reposer \xE0 l'abri des regards."
   fishName: Bar
   tankCenterGoal: {fileID: 0}
-  obstacleSensingDistance: 5
-  swimSpeedMin: 2
-  swimSpeedMax: 5
+  obstacleSensingDistance: 15
+  swimSpeedMin: 0.5
+  swimSpeedMax: 1
   maxTurnRateY: 5
   maxWanderAngle: 45
   wanderPeriodDuration: 0.8
   wanderProbability: 0.15
-  accelProba: 3
+  accelProba: 2
   swimSpeed: 0
   clearSprite: {fileID: 21300000, guid: 5e330b2b76587a040aba1afbd77e7c86, type: 3}
   hideSprite: {fileID: 21300000, guid: f1e0e13afb295314b963b52c35034d9b, type: 3}
@@ -248,27 +247,6 @@ MonoBehaviour:
   spe: {fileID: 21300000, guid: 9340b52bbe3e58843992a0f54f0f0d85, type: 3}
   col: {fileID: 21300000, guid: f4d2389c0c3c78d45b52dd211453c0f7, type: 3}
   fishId: 3
---- !u!95 &6330171662216472904
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4372286106159926224}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8478191700912706724
 PrefabInstance:
   m_ObjectHideFlags: 0

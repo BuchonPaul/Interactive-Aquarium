@@ -126,14 +126,14 @@ MonoBehaviour:
     dans les eaux peu profondes, se r\xE9galant de petits crustac\xE9s et algues. "
   fishName: Sar
   tankCenterGoal: {fileID: 0}
-  obstacleSensingDistance: 5
-  swimSpeedMin: 2
-  swimSpeedMax: 5
+  obstacleSensingDistance: 15
+  swimSpeedMin: 0.5
+  swimSpeedMax: 1
   maxTurnRateY: 5
-  maxWanderAngle: 90
+  maxWanderAngle: 45
   wanderPeriodDuration: 0.8
   wanderProbability: 0.15
-  accelProba: 3
+  accelProba: 2
   swimSpeed: 0
   clearSprite: {fileID: 21300000, guid: efa1fe0498bc129418f2795c1d407fba, type: 3}
   hideSprite: {fileID: 21300000, guid: dbd75f303209c0d4b89d60f680b96a57, type: 3}

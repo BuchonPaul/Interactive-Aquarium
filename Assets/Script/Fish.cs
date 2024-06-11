@@ -42,13 +42,6 @@ public class Fish : MonoBehaviour
 
     void Start()
 	{
-        swimSpeedMin = Random.Range(0.3f, 0.5f);//0.2f;
-        swimSpeedMax = Random.Range(3f, 4f);//0.6f;
-        maxTurnRateY = Random.Range(3f, 6f);//5f;
-        maxWanderAngle = Random.Range(30f, 60f);//45f;
-        wanderPeriodDuration = Random.Range(0.6f, 1f);//0.8f;
-        wanderProbability = Random.Range(0.1f, 0.2f);//0.15f;
-        accelProba = Random.Range(12f, 14f);
         if (tankCenterGoal == null)
 		{
 			Debug.LogError("[" + name + "] The tankCenterGoal parameter is required but is null.");

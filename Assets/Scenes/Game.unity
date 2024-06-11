@@ -1822,15 +1822,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7207468872389149428, guid: d087d40b3c0141649a983add18209588, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7207468872389149428, guid: d087d40b3c0141649a983add18209588, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7207468872389149428, guid: d087d40b3c0141649a983add18209588, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7207468872389149428, guid: d087d40b3c0141649a983add18209588, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4448,15 +4448,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7207468872389149428, guid: 90fe21d8032667444b11b020b1f66e60, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7207468872389149428, guid: 90fe21d8032667444b11b020b1f66e60, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7207468872389149428, guid: 90fe21d8032667444b11b020b1f66e60, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7207468872389149428, guid: 90fe21d8032667444b11b020b1f66e60, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4539,7 +4539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mBodySourceManager: {fileID: 790103379}
   mJointObject: {fileID: 5567353669616006783, guid: c7b60edde65f8524f86cf2ef053631eb, type: 3}
-  offset: {x: -0.24, y: 6.87, z: -23}
+  offset: {x: -0.78, y: 6.87, z: -21.9}
   zoom: 1.2
 --- !u!4 &1885257681
 Transform:
@@ -4609,6 +4609,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8752593528715419509, guid: 701076f600af21d4c91d2612296638c0, type: 3}
+      propertyPath: who
+      value: 
+      objectReference: {fileID: 1427310556}
     - target: {fileID: 8752593528715419509, guid: 701076f600af21d4c91d2612296638c0, type: 3}
       propertyPath: coloButt
       value: 
@@ -5021,7 +5025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77db75800aac8d445986bd168c1cd00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfObjects: 3
+  numberOfObjects: 2
 --- !u!4 &2033281018
 Transform:
   m_ObjectHideFlags: 0

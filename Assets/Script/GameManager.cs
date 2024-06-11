@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] fishs;
     public TextMeshProUGUI descText;
     public TextMeshProUGUI nameText;
+    public TextMeshProUGUI who;
     public string debugText = "testManager";
     public Fish fishToFind;
     public int fishCount = 0;
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
     {
         descText.text = fish.description;
         nameText.text = fish.fishName;
+        who.text = "Qui suis-je ?";
         sizeButt.GetComponent<Image>().sprite = fish.siz;
         weigButt.GetComponent<Image>().sprite = fish.wei;
         speeButt.GetComponent<Image>().sprite = fish.spe;
