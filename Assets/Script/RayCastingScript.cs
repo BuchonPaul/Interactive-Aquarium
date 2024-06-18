@@ -6,7 +6,7 @@ public class RayCastingScript : MonoBehaviour
 {
     Camera cam;
     public LayerMask mask;
-    public delegate void FishCatchedEventHandler(Fish fish);
+    public delegate void FishCatchedEventHandler(FishBehavior fish);
     public static event FishCatchedEventHandler FishCatchedEvent;
     void Start()
     {
@@ -25,7 +25,7 @@ public class RayCastingScript : MonoBehaviour
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, 100, mask)) {
-                FishCatchedEvent?.Invoke(hit.transform.gameObject.GetComponent<Fish>());
+                FishCatchedEvent?.Invoke(hit.transform.gameObject.GetComponent<FishBehavior>());
                 //Destroy(hit.transform.gameObject);
             }
         }

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI who;
     public string debugText = "testManager";
-    public Fish fishToFind;
+    public FishBehavior fishToFind;
     public int fishCount = 0;
 
     public delegate void updateCardEventHandler(int fishId);
@@ -43,30 +43,31 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Fish.FishSelectedEvent += OnFishSelected;
+        FishBehavior.FishSelectedEvent += OnFishSelected;
         RayCastingScript.FishCatchedEvent += OnFishCatched;
         FootInteraction.FishWalkedEvent += OnFishCatched;
     }
 
     private void OnDisable()
     {
-        Fish.FishSelectedEvent -= OnFishSelected;
+        FishBehavior.FishSelectedEvent -= OnFishSelected;
         RayCastingScript.FishCatchedEvent -= OnFishCatched;
         FootInteraction.FishWalkedEvent -= OnFishCatched;
     }
 
-    private void OnFishSelected(Fish fish)
+    private void OnFishSelected(FishBehavior fish)
     {
-        descText.text = fish.description;
-        nameText.text = fish.fishName;
+        FishData fisdata = fish.fishData;
+        descText.text = fisdata.description;
+        nameText.text = fisdata.fishName;
         who.text = "Qui suis-je ?";
-        sizeButt.GetComponent<Image>().sprite = fish.siz;
-        weigButt.GetComponent<Image>().sprite = fish.wei;
-        speeButt.GetComponent<Image>().sprite = fish.spe;
-        coloButt.GetComponent<Image>().sprite = fish.col;
+        sizeButt.GetComponent<Image>().sprite = fisdata.siz;
+        weigButt.GetComponent<Image>().sprite = fisdata.wei;
+        speeButt.GetComponent<Image>().sprite = fisdata.spe;
+        coloButt.GetComponent<Image>().sprite = fisdata.col;
         fishToFind = fish;
     }
-    private void OnFishCatched(Fish fish)
+    private void OnFishCatched(FishBehavior fish)
     {
         Debug.Log(fish.fishId);
         if(fishToFind != null)

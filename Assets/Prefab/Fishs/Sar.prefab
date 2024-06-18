@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8886368896368360092}
   - component: {fileID: 4024287520368113472}
   - component: {fileID: 8314608423574757860}
-  - component: {fileID: 225824508843410210}
-  m_Layer: 6
+  - component: {fileID: 6451341456295333754}
+  m_Layer: 8
   m_Name: Sar
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -83,7 +83,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &8314608423574757860
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -107,7 +107,7 @@ CapsuleCollider:
   m_Height: 2.7694962
   m_Direction: 2
   m_Center: {x: 0, y: 0.09743911, z: -0.5300695}
---- !u!114 &225824508843410210
+--- !u!114 &6451341456295333754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,15 +116,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4372286106159926224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e10c36e758b5a3438719afc0bd70283, type: 3}
+  m_Script: {fileID: 11500000, guid: c3f025034d8ef7c4c8cb4d3ceab0ac65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: "Le sar commun est un poisson \xE9l\xE9gant que l'on trouve dans les
-    mers. Avec ses rayures argent\xE9es, il ressemble \xE0 un artiste peintre ayant
-    plong\xE9 dans l'eau. Il nage avec gr\xE2ce, se m\xEAlant aux bancs de poissons
-    dans les eaux peu profondes, se r\xE9galant de petits crustac\xE9s et algues. "
-  fishName: Sar
-  tankCenterGoal: {x: -0.7277633, y: 2, z: -0.8951925}
+  fishData: {fileID: 11400000, guid: 9b633ee2ea33fa34fb7a4ccf7dfdc100, type: 2}
+  tankCenterGoal: {x: 0, y: 2, z: 0}
   swimSpeedMin: 1
   swimSpeedMax: 3
   maxTurnRateY: 15
@@ -132,13 +128,9 @@ MonoBehaviour:
   wanderPeriodDuration: 0.1
   wanderProbability: 0.15
   detectionDistance: 1
+  fishQuantity: 3
+  spawnPos: {x: 0, y: 0, z: 0}
   fishId: 2
-  clearSprite: {fileID: 21300000, guid: efa1fe0498bc129418f2795c1d407fba, type: 3}
-  hideSprite: {fileID: 21300000, guid: dbd75f303209c0d4b89d60f680b96a57, type: 3}
-  siz: {fileID: 21300000, guid: cb9dc58c686597e40bb1626df427173a, type: 3}
-  wei: {fileID: 21300000, guid: 83e6d9efd66349b47a4e03f1f41b7905, type: 3}
-  spe: {fileID: 21300000, guid: ce14627d6940d654f9236affb3314678, type: 3}
-  col: {fileID: 21300000, guid: 7258c7de2c3667f4c8ee3c3de78ca951, type: 3}
   swimSpeed: 0
 --- !u!1001 &4362202818754464921
 PrefabInstance:
@@ -190,11 +182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6534222099911669553, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -6522695966643703301, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -5860375839618662559, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -202,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: aa9b740d16ba80a4987006f351786b57, type: 2}
     - target: {fileID: -5180335593140051321, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -2557366035327600587, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -214,31 +206,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1790183945725220954, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2480909740878747892, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4398146065261190967, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4819001077394492298, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6905609870639353253, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7036213049465896255, guid: cc375f2007194744e9aff319b2341ea2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

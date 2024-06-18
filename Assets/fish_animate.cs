@@ -6,7 +6,7 @@ using UnityEngine;
 public class fish_animate : MonoBehaviour
 {
     public GameObject fish;
-    private Fish fishdata;
+    private FishBehavior fishdata;
 
     private Animator animator;
     private Vector3 previousPosition;
@@ -14,7 +14,7 @@ public class fish_animate : MonoBehaviour
 
     void Start()
     {
-        fishdata = fish.GetComponent<Fish>();
+        fishdata = fish.GetComponent<FishBehavior>();
         previousPosition = fish.transform.position;
         animator = GetComponent<Animator>();
     }

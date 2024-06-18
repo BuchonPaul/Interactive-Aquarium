@@ -25,11 +25,11 @@ public class fishButton : MonoBehaviour
         Assert.IsNotNull(prefabPoisson, "Le prefab du poisson n'est pas assigné au bouton !");
         buttonImage = GetComponent<Image>();
         button = GetComponent<Button>();
-        Fish fishComponent = prefabPoisson.GetComponent<Fish>();
+        FishBehavior fishComponent = prefabPoisson.GetComponent<FishBehavior>();
         
         if (fishComponent != null)
         {        
-            buttonImage.sprite = fishComponent.hideSprite;
+            buttonImage.sprite = fishComponent.fishData.hideSprite;
         }
         else
         {
@@ -37,13 +37,13 @@ public class fishButton : MonoBehaviour
         }
     }
     public void updateCard(int fishId) {
-        if (prefabPoisson.GetComponent<Fish>().fishId == fishId)
+        if (prefabPoisson.GetComponent<FishBehavior>().fishId == fishId)
         {
-            Fish fishComponent = prefabPoisson.GetComponent<Fish>();
+            FishBehavior fishComponent = prefabPoisson.GetComponent<FishBehavior>();
 
             if (fishComponent != null)
             {
-                buttonImage.sprite = fishComponent.clearSprite;
+                buttonImage.sprite = fishComponent.fishData.clearSprite;
             }
         }
     }

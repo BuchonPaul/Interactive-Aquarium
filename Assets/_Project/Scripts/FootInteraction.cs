@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FootInteraction : MonoBehaviour
 {
-    public delegate void FishWalkedEventHandler(Fish fish);
+    public delegate void FishWalkedEventHandler(FishBehavior fish);
     public static event FishWalkedEventHandler FishWalkedEvent;
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class FootInteraction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Fish"))
         {
-            FishWalkedEvent?.Invoke(other.GetComponent<Fish>());
+            FishWalkedEvent?.Invoke(other.GetComponent<FishBehavior>());
         };
     }
 }

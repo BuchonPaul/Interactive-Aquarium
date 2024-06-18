@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6090454060573587122}
   - component: {fileID: 5552320256331680089}
   - component: {fileID: 8375194932869801017}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,8 +117,8 @@ GameObject:
   - component: {fileID: 8886368896368360092}
   - component: {fileID: 4024287520368113472}
   - component: {fileID: 8314608423574757860}
-  - component: {fileID: 225824508843410210}
-  m_Layer: 6
+  - component: {fileID: 5395563469471127570}
+  m_Layer: 8
   m_Name: Dorade
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -189,7 +189,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &8314608423574757860
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -213,7 +213,7 @@ CapsuleCollider:
   m_Height: 2.3716521
   m_Direction: 2
   m_Center: {x: -0.09135387, y: 0.097439066, z: -0.40964216}
---- !u!114 &225824508843410210
+--- !u!114 &5395563469471127570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,15 +222,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4372286106159926224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e10c36e758b5a3438719afc0bd70283, type: 3}
+  m_Script: {fileID: 11500000, guid: c3f025034d8ef7c4c8cb4d3ceab0ac65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: "La dorade est un poisson magnifique aux reflets dor\xE9s, rapide
-    et agile dans les oc\xE9ans, se nourrissant de petits crustac\xE9s et poissons
-    tout en se cachant des pr\xE9dateurs sous les rochers et dans les grottes marines
-    pour se reposer en s\xE9curit\xE9."
-  fishName: Dorade
-  tankCenterGoal: {x: -0.7277633, y: 2, z: -0.8951925}
+  fishData: {fileID: 11400000, guid: cbff1f44e3f7aa1468ceb47c5d44d11d, type: 2}
+  tankCenterGoal: {x: 0, y: 2, z: 0}
   swimSpeedMin: 2
   swimSpeedMax: 3
   maxTurnRateY: 15
@@ -238,13 +234,9 @@ MonoBehaviour:
   wanderPeriodDuration: 0.1
   wanderProbability: 0.15
   detectionDistance: 1
+  fishQuantity: 2
+  spawnPos: {x: 0, y: 0, z: 0}
   fishId: 1
-  clearSprite: {fileID: 21300000, guid: 8d4b6ce5f39680e4c84556060a346e01, type: 3}
-  hideSprite: {fileID: 21300000, guid: d2712cf7a317ddf41b67294af46f2d9c, type: 3}
-  siz: {fileID: 21300000, guid: e0d7946d97945704bb2ae21294bfaab2, type: 3}
-  wei: {fileID: 21300000, guid: a2a622b9ea5008e4ba21070c78967d17, type: 3}
-  spe: {fileID: 21300000, guid: 36f85cfef31abde4b9aa5f24c241acb1, type: 3}
-  col: {fileID: 21300000, guid: afbf1d16774129b49adcc982f0ee3ff5, type: 3}
   swimSpeed: 0
 --- !u!1001 &5693749583850153590
 PrefabInstance:
@@ -254,6 +246,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7207468872389149428}
     m_Modifications:
+    - target: {fileID: -9058820723171513989, guid: 9e586379374311041a96365f4fe385a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e586379374311041a96365f4fe385a8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.82
@@ -310,14 +306,50 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8284381499962019801, guid: 9e586379374311041a96365f4fe385a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -5920494324550386462, guid: 9e586379374311041a96365f4fe385a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -3266937204471775595, guid: 9e586379374311041a96365f4fe385a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -375193587913789773, guid: 9e586379374311041a96365f4fe385a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9e586379374311041a96365f4fe385a8, type: 3}
       propertyPath: m_Name
       value: dorade
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e586379374311041a96365f4fe385a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449580909640090004, guid: 9e586379374311041a96365f4fe385a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102222621345312710, guid: 9e586379374311041a96365f4fe385a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5037863021476495404, guid: 9e586379374311041a96365f4fe385a8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 216e7e27e8e4bd146a6855a8302702c6, type: 2}
+    - target: {fileID: 5788574715350129738, guid: 9e586379374311041a96365f4fe385a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151217100469420474, guid: 9e586379374311041a96365f4fe385a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

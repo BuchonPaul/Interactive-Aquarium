@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fish : MonoBehaviour
+public class Fishs : MonoBehaviour
 {
     public string description;
     public string fishName;
@@ -15,7 +15,7 @@ public class Fish : MonoBehaviour
     public float wanderProbability = 0.15f;
     public float detectionDistance = 4f;
 
-    public delegate void FishSelectedEventHandler(Fish fish);
+    public delegate void FishSelectedEventHandler(Fishs fish);
     public static event FishSelectedEventHandler FishSelectedEvent;
     public int fishId;
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6090454060573587122}
   - component: {fileID: 5552320256331680089}
   - component: {fileID: 8375194932869801017}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,8 @@ GameObject:
   - component: {fileID: 4024287520368113472}
   - component: {fileID: 8314608423574757860}
   - component: {fileID: 225824508843410210}
-  m_Layer: 6
+  - component: {fileID: 8286070139711135508}
+  m_Layer: 8
   m_Name: Bar
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -155,7 +156,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -189,7 +190,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &8314608423574757860
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -203,7 +204,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -245,6 +246,31 @@ MonoBehaviour:
   wei: {fileID: 21300000, guid: f90214443dc95024aa8f9c0d58e4e785, type: 3}
   spe: {fileID: 21300000, guid: 9340b52bbe3e58843992a0f54f0f0d85, type: 3}
   col: {fileID: 21300000, guid: f4d2389c0c3c78d45b52dd211453c0f7, type: 3}
+  swimSpeed: 0
+--- !u!114 &8286070139711135508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4372286106159926224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f025034d8ef7c4c8cb4d3ceab0ac65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishData: {fileID: 11400000, guid: ad26cea74b4ec3e4db61f62fda3074ca, type: 2}
+  tankCenterGoal: {x: 0, y: 2, z: 0}
+  swimSpeedMin: 0.2
+  swimSpeedMax: 2
+  maxTurnRateY: 15
+  maxWanderAngle: 90
+  wanderPeriodDuration: 10
+  wanderProbability: 1
+  detectionDistance: 1.5
+  fishQuantity: 2
+  spawnPos: {x: 0, y: 0, z: 0}
+  fishId: 3
   swimSpeed: 0
 --- !u!1001 &8478191700912706724
 PrefabInstance:
@@ -310,18 +336,66 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6522695966643703301, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
       propertyPath: m_Name
       value: SeaBass
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1602564128540957456, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 761095978bccfa1479cc6f47daeb888e, type: 2}
+    - target: {fileID: 1790183945725220954, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480909740878747892, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595846556576974389, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819001077394492298, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507901977716847365, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6684295394808222897, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 761095978bccfa1479cc6f47daeb888e, type: 2}
+    - target: {fileID: 6905609870639353253, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953085446890567447, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178353486837351355, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
