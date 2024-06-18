@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 8314608423574757860}
   - component: {fileID: 225824508843410210}
   m_Layer: 6
-  m_Name: bar
+  m_Name: Bar
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.84, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9157070358477114344}
@@ -161,8 +161,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7966014, y: 1.1858119, z: 2.6278625}
-  m_Center: {x: 0.009841859, y: 0.09290594, z: -0.4600489}
+  m_Size: {x: 0.8323062, y: 0.7881663, z: 2.7335324}
+  m_Center: {x: 0.056747146, y: 0.07320116, z: -0.56418854}
 --- !u!54 &4024287520368113472
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -230,23 +230,22 @@ MonoBehaviour:
     avec agilit\xE9 ses proies, se faufilant habilement entre les rochers pour se
     reposer \xE0 l'abri des regards."
   fishName: Bar
-  tankCenterGoal: {fileID: 0}
-  obstacleSensingDistance: 15
-  swimSpeedMin: 0.5
-  swimSpeedMax: 1
-  maxTurnRateY: 5
-  maxWanderAngle: 45
-  wanderPeriodDuration: 0.8
-  wanderProbability: 0.15
-  accelProba: 2
-  swimSpeed: 0
+  tankCenterGoal: {x: 0, y: 2, z: 0}
+  swimSpeedMin: 0.2
+  swimSpeedMax: 2
+  maxTurnRateY: 15
+  maxWanderAngle: 90
+  wanderPeriodDuration: 10
+  wanderProbability: 1
+  detectionDistance: 1.5
+  fishId: 3
   clearSprite: {fileID: 21300000, guid: 5e330b2b76587a040aba1afbd77e7c86, type: 3}
   hideSprite: {fileID: 21300000, guid: f1e0e13afb295314b963b52c35034d9b, type: 3}
   siz: {fileID: 21300000, guid: 5a4c2397cb938914da127a8364e93e8d, type: 3}
   wei: {fileID: 21300000, guid: f90214443dc95024aa8f9c0d58e4e785, type: 3}
   spe: {fileID: 21300000, guid: 9340b52bbe3e58843992a0f54f0f0d85, type: 3}
   col: {fileID: 21300000, guid: f4d2389c0c3c78d45b52dd211453c0f7, type: 3}
-  fishId: 3
+  swimSpeed: 0
 --- !u!1001 &8478191700912706724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -330,6 +329,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3757611294849201576}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7770941667237840269}
   m_SourcePrefab: {fileID: 100100000, guid: f22165b47eccd9a49bc3e0aa943ce15a, type: 3}
 --- !u!4 &8224187631406969679 stripped
 Transform:
@@ -362,3 +364,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7770941667237840269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8748804948467919349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2d6a98be6ebfc47b4b4ffe29517b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fish: {fileID: 4372286106159926224}
+  currentVelocity: {x: 0, y: 0, z: 0}
