@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f025034d8ef7c4c8cb4d3ceab0ac65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishData: {fileID: 11400000, guid: ad26cea74b4ec3e4db61f62fda3074ca, type: 2}
+  fishData: {fileID: 11400000, guid: e337b2730b6a5ae47870ee97094a7206, type: 2}
   tankCenterGoal: {x: 0, y: 2, z: 0}
   swimSpeedMin: 0
   swimSpeedMax: 0.4

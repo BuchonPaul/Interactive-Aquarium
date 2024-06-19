@@ -117,7 +117,6 @@ GameObject:
   - component: {fileID: 8886368896368360092}
   - component: {fileID: 4024287520368113472}
   - component: {fileID: 8314608423574757860}
-  - component: {fileID: 225824508843410210}
   - component: {fileID: 8286070139711135508}
   m_Layer: 8
   m_Name: Bar
@@ -214,39 +213,6 @@ CapsuleCollider:
   m_Height: 2.7021978
   m_Direction: 2
   m_Center: {x: 0.06471641, y: 0.06810419, z: -0.56372035}
---- !u!114 &225824508843410210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4372286106159926224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e10c36e758b5a3438719afc0bd70283, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: "Le bar commun, poisson embl\xE9matique des c\xF4tes, est reconnu
-    pour sa silhouette fusel\xE9e et sa force dans les courants marins. Il chasse
-    avec agilit\xE9 ses proies, se faufilant habilement entre les rochers pour se
-    reposer \xE0 l'abri des regards."
-  fishName: Bar
-  tankCenterGoal: {x: 0, y: 2, z: 0}
-  swimSpeedMin: 0.2
-  swimSpeedMax: 2
-  maxTurnRateY: 15
-  maxWanderAngle: 90
-  wanderPeriodDuration: 10
-  wanderProbability: 1
-  detectionDistance: 1.5
-  fishId: 3
-  clearSprite: {fileID: 21300000, guid: 5e330b2b76587a040aba1afbd77e7c86, type: 3}
-  hideSprite: {fileID: 21300000, guid: f1e0e13afb295314b963b52c35034d9b, type: 3}
-  siz: {fileID: 21300000, guid: 5a4c2397cb938914da127a8364e93e8d, type: 3}
-  wei: {fileID: 21300000, guid: f90214443dc95024aa8f9c0d58e4e785, type: 3}
-  spe: {fileID: 21300000, guid: 9340b52bbe3e58843992a0f54f0f0d85, type: 3}
-  col: {fileID: 21300000, guid: f4d2389c0c3c78d45b52dd211453c0f7, type: 3}
-  swimSpeed: 0
 --- !u!114 &8286070139711135508
 MonoBehaviour:
   m_ObjectHideFlags: 0

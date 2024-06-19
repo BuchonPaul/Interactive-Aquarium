@@ -7,6 +7,26 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
+    /*    [Header("Aquarium")]
+        [Header("Photo Taker")]
+        [SerializeField] private Image photoDisplayArea;
+        [SerializeField] private GameObject photoFrame;
+        [Header("Flash Effect")]
+        [SerializeField] private GameObject cameraFlash;
+        [SerializeField] private float flashTime;
+        [Header("Photo Fade Effect")]
+        [SerializeField] private Animator animator;
+
+
+        [Header("Quizz")]
+        [Header("Photo Taker")]
+        [SerializeField] private Image QuizzPhotoDisplayArea;
+        [SerializeField] private GameObject QuizzPhotoFrame;
+        [Header("Photo Fade Effect")]
+        [SerializeField] private Animator QuizzAnimator;*/
+    public PhotoCapture CameraphotoCapture;
+    public PhotoCapture QuizzphotoCapture;
+
     private static GameManager _instance;
     public GameObject[] fishs;
     public TextMeshProUGUI descText;
@@ -44,14 +64,14 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         FishBehavior.FishSelectedEvent += OnFishSelected;
-        RayCastingScript.FishCatchedEvent += OnFishCatched;
+        OrthoRayCastingScript.FishCatchedEvent += OnFishCatched;
         FootInteraction.FishWalkedEvent += OnFishCatched;
     }
 
     private void OnDisable()
     {
         FishBehavior.FishSelectedEvent -= OnFishSelected;
-        RayCastingScript.FishCatchedEvent -= OnFishCatched;
+        OrthoRayCastingScript.FishCatchedEvent -= OnFishCatched;
         FootInteraction.FishWalkedEvent -= OnFishCatched;
     }
 
@@ -72,12 +92,22 @@ public class GameManager : MonoBehaviour
         Debug.Log(fish.fishId);
         if(fishToFind != null)
         {
+            CameraphotoCapture.RemovePhoto();
+            QuizzphotoCapture.RemovePhoto();
+
             if (fish.fishId == fishToFind.fishId)
             {
+                StartCoroutine(CameraphotoCapture.CapturePhoto(fish, true));
+                StartCoroutine(QuizzphotoCapture.CapturePhoto(fish, true));
+
                 Debug.Log("Catched:" + fish.fishId);
                 fishCount += 1;
                 fishToFind = null;
                 UpdateCardEvent.Invoke(fish.fishId);
+            }
+            else
+            {
+                StartCoroutine(CameraphotoCapture.CapturePhoto(fish, false));
             }
             Debug.Log(fishs.Length);
             if (fishs.Length == fishCount)

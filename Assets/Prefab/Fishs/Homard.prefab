@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de2d9796c00e8c54ca42f003451a46c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishData: {fileID: 0}
+  fishData: {fileID: 11400000, guid: d10bcd4a839acc3408e94328f7661ffa, type: 2}
   minMoveDistance: 2.5
   maxMoveDistance: 3
   moveDuration: 100

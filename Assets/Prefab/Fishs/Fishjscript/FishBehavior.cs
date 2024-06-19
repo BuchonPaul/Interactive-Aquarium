@@ -81,6 +81,7 @@ public class FishBehavior : MonoBehaviour
 
     public void TaskOnClick()
     {
+        Debug.Log("fishName");
         FishSelectedEvent?.Invoke(this);
     }
 
