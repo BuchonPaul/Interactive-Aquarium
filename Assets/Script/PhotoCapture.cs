@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,8 +19,11 @@ public class PhotoCapture : MonoBehaviour
     [SerializeField] private Animator animator;
 
     private Texture2D screenCapture;
-    private bool viewingPhoto;
+    public bool viewingPhoto;
     private float timeShoot;
+    private Sprite photoSprite;
+
+    public TextMeshProUGUI photoText;
     void Start()
     {
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
@@ -34,15 +38,20 @@ public class PhotoCapture : MonoBehaviour
         }
     }
 
-    public IEnumerator CapturePhoto(FishBehavior fishCaptured, bool isGood)
+    public IEnumerator CapturePhoto(string fishName, bool isGood, FishBehavior snapedFish)
     {
         viewingPhoto = true;
         yield return new WaitForEndOfFrame();
 
-        Rect regionToHead = new Rect(0, 0, Screen.width, Screen.height);
-
-        screenCapture.ReadPixels(regionToHead, 0, 0, false);
-        screenCapture.Apply();
+        photoText.color = Color.black;
+        photoText.fontStyle = FontStyles.Normal;
+        photoText.text = fishName;
+        if (!isGood )
+        {
+            photoText.color = Color.red;
+            photoText.fontStyle = FontStyles.Strikethrough;
+        }
+        photoSprite = snapedFish.fishData.photo;
         ShowPhoto();
         timeShoot = 0;
     }
@@ -58,7 +67,6 @@ public class PhotoCapture : MonoBehaviour
     }
     void ShowPhoto()    
     {
-        Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0f, 0f, screenCapture.width, screenCapture.height), new Vector2(0.5f, 0.5f), 100);
         photoDisplayArea.sprite = photoSprite;
 
         photoFrame.SetActive(true);

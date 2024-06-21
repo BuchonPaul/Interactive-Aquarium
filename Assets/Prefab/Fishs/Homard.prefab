@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6090454060573587122}
   - component: {fileID: 5552320256331680089}
   - component: {fileID: 8375194932869801017}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,8 @@ GameObject:
   - component: {fileID: 4024287520368113472}
   - component: {fileID: 8314608423574757860}
   - component: {fileID: 1043562453161693579}
-  m_Layer: 6
+  - component: {fileID: -1700838428839261702}
+  m_Layer: 8
   m_Name: Homard
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -231,3 +232,29 @@ MonoBehaviour:
   idleDuration: 4
   minRotationAngle: -30
   maxRotationAngle: 30
+--- !u!114 &-1700838428839261702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4372286106159926224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f025034d8ef7c4c8cb4d3ceab0ac65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishData: {fileID: 11400000, guid: d10bcd4a839acc3408e94328f7661ffa, type: 2}
+  tankCenterGoal: {x: 0, y: 0, z: 0}
+  swimSpeedMin: 0.2
+  swimSpeedMax: 0.6
+  maxTurnRateY: 15
+  maxWanderAngle: 90
+  wanderPeriodDuration: 0.8
+  wanderProbability: 0.15
+  detectionDistance: 4
+  fishQuantity: 2
+  spawnPos: {x: 0, y: 0, z: 0}
+  fishId: 5
+  swimSpeed: 0
+  isfish: 0

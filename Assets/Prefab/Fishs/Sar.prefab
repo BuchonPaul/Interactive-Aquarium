@@ -130,8 +130,9 @@ MonoBehaviour:
   detectionDistance: 1
   fishQuantity: 3
   spawnPos: {x: 0, y: 0, z: 0}
-  fishId: 2
+  fishId: 4
   swimSpeed: 0
+  isfish: 1
 --- !u!1001 &4362202818754464921
 PrefabInstance:
   m_ObjectHideFlags: 0

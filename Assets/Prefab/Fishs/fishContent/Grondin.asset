@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Grondin
   description: 
-  clearSprite: {fileID: 0}
-  hideSprite: {fileID: 0}
-  siz: {fileID: 0}
-  wei: {fileID: 0}
-  spe: {fileID: 0}
-  col: {fileID: 0}
+  clearSprite: {fileID: 21300000, guid: 9f8336649df27ae41b9b20c746af0545, type: 3}
+  hideSprite: {fileID: 21300000, guid: d2aeb3b977997d84cbf78d9f004fbcb5, type: 3}
+  clearDesc: {fileID: 21300000, guid: 118890c3b48e42648b6fd57658775f99, type: 3}
+  hideDesc: {fileID: 21300000, guid: b3806d9591c94244bb688756ae868a7f, type: 3}
+  photo: {fileID: 21300000, guid: d9538c47798360b4ea38055f8d10b315, type: 3}

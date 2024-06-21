@@ -7,42 +7,20 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
-    /*    [Header("Aquarium")]
-        [Header("Photo Taker")]
-        [SerializeField] private Image photoDisplayArea;
-        [SerializeField] private GameObject photoFrame;
-        [Header("Flash Effect")]
-        [SerializeField] private GameObject cameraFlash;
-        [SerializeField] private float flashTime;
-        [Header("Photo Fade Effect")]
-        [SerializeField] private Animator animator;
-
-
-        [Header("Quizz")]
-        [Header("Photo Taker")]
-        [SerializeField] private Image QuizzPhotoDisplayArea;
-        [SerializeField] private GameObject QuizzPhotoFrame;
-        [Header("Photo Fade Effect")]
-        [SerializeField] private Animator QuizzAnimator;*/
     public PhotoCapture CameraphotoCapture;
     public PhotoCapture QuizzphotoCapture;
 
     private static GameManager _instance;
     public GameObject[] fishs;
-    public TextMeshProUGUI descText;
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI who;
-    public string debugText = "testManager";
+
     public FishBehavior fishToFind;
+    public string fishToFindName;
     public int fishCount = 0;
 
     public delegate void updateCardEventHandler(int fishId);
     public static event updateCardEventHandler UpdateCardEvent;
 
-    public Button sizeButt;
-    public Button weigButt;
-    public Button speeButt;
-    public Button coloButt;
+    public Image RightPage;
 
     void Awake()
     {
@@ -75,39 +53,44 @@ public class GameManager : MonoBehaviour
         FootInteraction.FishWalkedEvent -= OnFishCatched;
     }
 
-    private void OnFishSelected(FishBehavior fish)
+    private void OnFishSelected(FishBehavior fish, bool found)
     {
-        FishData fisdata = fish.fishData;
-        descText.text = fisdata.description;
-        nameText.text = fisdata.fishName;
-        who.text = "Qui suis-je ?";
-        sizeButt.GetComponent<Image>().sprite = fisdata.siz;
-        weigButt.GetComponent<Image>().sprite = fisdata.wei;
-        speeButt.GetComponent<Image>().sprite = fisdata.spe;
-        coloButt.GetComponent<Image>().sprite = fisdata.col;
-        fishToFind = fish;
+        if (found)
+        {
+            fishToFind = null;
+            fishToFindName = null;
+            RightPage.sprite = fish.fishData.clearDesc;
+        }
+        else
+        {
+            fishToFind = fish;
+            fishToFindName = fish.fishData.name;
+            RightPage.sprite = fish.fishData.hideDesc;
+        }
     }
     private void OnFishCatched(FishBehavior fish)
     {
         Debug.Log(fish.fishId);
-        if(fishToFind != null)
+        if (fishToFind != null)
         {
             CameraphotoCapture.RemovePhoto();
             QuizzphotoCapture.RemovePhoto();
 
             if (fish.fishId == fishToFind.fishId)
             {
-                StartCoroutine(CameraphotoCapture.CapturePhoto(fish, true));
-                StartCoroutine(QuizzphotoCapture.CapturePhoto(fish, true));
+                StartCoroutine(CameraphotoCapture.CapturePhoto(fishToFindName, true, fish));
+                StartCoroutine(QuizzphotoCapture.CapturePhoto(fishToFindName, true, fish));
 
                 Debug.Log("Catched:" + fish.fishId);
                 fishCount += 1;
                 fishToFind = null;
+                fishToFindName = null;
                 UpdateCardEvent.Invoke(fish.fishId);
+                RightPage.sprite = fish.fishData.clearDesc;
             }
             else
             {
-                StartCoroutine(CameraphotoCapture.CapturePhoto(fish, false));
+                StartCoroutine(CameraphotoCapture.CapturePhoto(fishToFindName, false, fish));
             }
             Debug.Log(fishs.Length);
             if (fishs.Length == fishCount)

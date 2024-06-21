@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Homard
   description: 
-  clearSprite: {fileID: 0}
-  hideSprite: {fileID: 0}
-  siz: {fileID: 0}
-  wei: {fileID: 0}
-  spe: {fileID: 0}
-  col: {fileID: 0}
+  clearSprite: {fileID: 21300000, guid: ccca57cbcf5a723499d79a3d9f58cd79, type: 3}
+  hideSprite: {fileID: 21300000, guid: 33b4fe2edcf4022499bffecfbb44fbf0, type: 3}
+  clearDesc: {fileID: 21300000, guid: 118890c3b48e42648b6fd57658775f99, type: 3}
+  hideDesc: {fileID: 21300000, guid: b3806d9591c94244bb688756ae868a7f, type: 3}
+  photo: {fileID: 21300000, guid: 2bc699d28e592144b8a0a6ed0db13e2f, type: 3}

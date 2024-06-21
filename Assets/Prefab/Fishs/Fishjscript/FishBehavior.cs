@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class FishBehavior : MonoBehaviour
 {
     public FishData fishData;
@@ -13,7 +13,7 @@ public class FishBehavior : MonoBehaviour
     public float detectionDistance = 4f;
     public int fishQuantity = 2;
     public Vector3 spawnPos;
-    public delegate void FishSelectedEventHandler(FishBehavior fish);
+    public delegate void FishSelectedEventHandler(FishBehavior fish, bool found);
     public static event FishSelectedEventHandler FishSelectedEvent;
     public int fishId;
 
@@ -24,6 +24,7 @@ public class FishBehavior : MonoBehaviour
     private float randomOffset;
     private Vector3 hitPoint;
     private Vector3 goalPoint;
+    public bool isfish = true;
 
     void Start()
     {
@@ -32,11 +33,14 @@ public class FishBehavior : MonoBehaviour
 
     void Update()
     {
-        AvoidObstacles();
-        UpdatePosition();
-        if (!obstacleDetected)
+        if (isfish)
         {
-            Wander();
+            AvoidObstacles();
+            UpdatePosition();
+            if (!obstacleDetected)
+            {
+                Wander();
+            }
         }
     }
 
@@ -82,7 +86,7 @@ public class FishBehavior : MonoBehaviour
     public void TaskOnClick()
     {
         Debug.Log("fishName");
-        FishSelectedEvent?.Invoke(this);
+        FishSelectedEvent?.Invoke(this, EventSystem.current.currentSelectedGameObject.GetComponent<fishUIButton>().founded);
     }
 
     private void OnDrawGizmos()
