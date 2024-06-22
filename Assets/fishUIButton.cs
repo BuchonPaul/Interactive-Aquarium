@@ -37,7 +37,8 @@ public class fishUIButton : MonoBehaviour
             if (fishComponent != null)
             {
                 founded = true;
-                buttonImage.sprite = fishComponent.fishData.clearSprite;
+                buttonImage.sprite = null;
+                buttonImage.color = Color.clear;
             }
         }
     }
