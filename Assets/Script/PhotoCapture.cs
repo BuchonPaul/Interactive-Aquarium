@@ -17,11 +17,15 @@ public class PhotoCapture : MonoBehaviour
 
     [Header("Photo Fade Effect")]
     [SerializeField] private Animator animator;
+    [SerializeField] private Animator BCKanimator;
 
     private Texture2D screenCapture;
     public bool viewingPhoto;
     private float timeShoot;
     private Sprite photoSprite;
+
+    public bool isAqua = true;
+    public bool QuizzVisible = true;
 
     public TextMeshProUGUI photoText;
     void Start()
@@ -32,10 +36,11 @@ public class PhotoCapture : MonoBehaviour
     void Update()
     {
         timeShoot += Time.deltaTime;
-        if (timeShoot > 2)
+        if (timeShoot > 2 )
         {
             RemovePhoto();
         }
+
     }
 
     public IEnumerator CapturePhoto(string fishName, bool isGood, FishBehavior snapedFish)
@@ -68,8 +73,14 @@ public class PhotoCapture : MonoBehaviour
     void ShowPhoto()    
     {
         photoDisplayArea.sprite = photoSprite;
-
+        Debug.Log("ZAZA");
         photoFrame.SetActive(true);
+        QuizzVisible = true;
+
+        if (BCKanimator)
+        {
+            BCKanimator.Play("PhotoFade2");
+        }
         StartCoroutine(CameraFlashEffect());
         animator.Play("PhotoFade");
     }
@@ -77,6 +88,25 @@ public class PhotoCapture : MonoBehaviour
     public void RemovePhoto()
     {
         viewingPhoto = false;
+        if (isAqua)
+        {
+            photoFrame.SetActive(false);
+
+        }
+        else
+        {
+            if (QuizzVisible)
+            {
+                QuizzVisible = false;
+                BCKanimator.Play("PhotoFadeReverse");
+                StartCoroutine(RemovePhotoQ());
+            }
+        }
+    }
+    IEnumerator RemovePhotoQ()
+    {
+        yield return new WaitForSeconds(0.3f);
         photoFrame.SetActive(false);
+
     }
 }

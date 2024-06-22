@@ -73,8 +73,9 @@ public class GameManager : MonoBehaviour
         Debug.Log(fish.fishId);
         if (fishToFind != null)
         {
+            //StartCoroutine(CameraphotoCapture.RemovePhoto());
             CameraphotoCapture.RemovePhoto();
-            QuizzphotoCapture.RemovePhoto();
+            //QuizzphotoCapture.RemovePhoto();
 
             if (fish.fishId == fishToFind.fishId)
             {
