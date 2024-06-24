@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+/* Script de GameManager :
+ * Il gère le fonctionnement global du jeu et fait la liaison entre le bassin et l'écran de menu.
+ */
 public class GameManager : MonoBehaviour
 {
     public PhotoCapture CameraphotoCapture;
@@ -30,16 +30,6 @@ public class GameManager : MonoBehaviour
     public AudioClip ambientClip;
     private AudioSource audioSource;
 
-    void Awake()
-    {
-        _instance = this;
-    }
-    private void Start()
-    {
-        leo.SetActive(false);
-        prof.SetActive(false);
-        audioSource = gameObject.AddComponent<AudioSource>();
-    }
     public static GameManager Instance
     {
         get
@@ -53,11 +43,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void Awake()
+    {
+        _instance = this;
+    }
+
+    private void Start()
+    {
+        leo.SetActive(false);
+        prof.SetActive(false);
+        audioSource = gameObject.AddComponent<AudioSource>();
+    }
+
+    // Ces méthodes écoutent les événements des différents composants du code et leur associent une fonction.
     private void OnEnable()
     {
-        FishBehavior.FishSelectedEvent += OnFishSelected;
-        OrthoRayCastingScript.FishCatchedEvent += OnFishCatched;
-        FootInteraction.FishWalkedEvent += OnFishCatched;
+        FishBehavior.FishSelectedEvent += OnFishSelected; // Détecte le clic sur un bouton de sélection de poisson
+        OrthoRayCastingScript.FishCatchedEvent += OnFishCatched; // Détecte un clic sur un poisson du bassin par le RayCast
+        FootInteraction.FishWalkedEvent += OnFishCatched; // Détecte la collision entre un pied et un poisson
     }
 
     private void OnDisable()
@@ -67,10 +70,11 @@ public class GameManager : MonoBehaviour
         FootInteraction.FishWalkedEvent -= OnFishCatched;
     }
 
+    // Cette fonction s'exécute quand un poisson est sélectionné dans le menu.
     private void OnFishSelected(FishBehavior fish, bool found)
     {
-        audioSource.PlayOneShot(selectClip);
-        if (found)
+        audioSource.PlayOneShot(selectClip); // On joue un son de clic
+        if (found) // Si le poisson est déjà trouvé
         {
             fishToFind = null;
             fishToFindName = null;
@@ -87,22 +91,20 @@ public class GameManager : MonoBehaviour
             prof.SetActive(false);
         }
     }
+
+    // Cette fonction s'exécute s'il y a une interaction entre l'utilisateur et le bassin.
     private void OnFishCatched(FishBehavior fish)
     {
-        Debug.Log(fish.fishId);
-        if (fishToFind != null)
+        if (fishToFind != null) // Si un poisson est en train d'être cherché
         {
-            //StartCoroutine(CameraphotoCapture.RemovePhoto());
-            CameraphotoCapture.RemovePhoto();
-            //QuizzphotoCapture.RemovePhoto();
+            CameraphotoCapture.RemovePhoto(); // On retire l'overlay photo du bassin
 
-            if (fish.fishId == fishToFind.fishId)
+            if (fish.fishId == fishToFind.fishId) // Si le poisson avec lequel l'utilisateur a interagi est le bon :
             {
                 StartCoroutine(CameraphotoCapture.CapturePhoto(fishToFindName, true, fish));
                 StartCoroutine(QuizzphotoCapture.CapturePhoto(fishToFindName, true, fish));
                 leo.SetActive(false);
                 prof.SetActive(true);
-                Debug.Log("Catched:" + fish.fishId);
                 fishCount += 1;
                 fishToFind = null;
                 fishToFindName = null;
@@ -114,12 +116,11 @@ public class GameManager : MonoBehaviour
                 audioSource.PlayOneShot(wrongClip);
                 StartCoroutine(CameraphotoCapture.CapturePhoto(fishToFindName, false, fish));
             }
-            Debug.Log(fishs.Length);
-            if (fishs.Length == fishCount)
+
+            if (fishs.Length == fishCount) // Si tous les poissons on été trouvés
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
-
     }
 }

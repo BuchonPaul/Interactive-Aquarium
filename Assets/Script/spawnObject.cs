@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Fonction qui créé des poissons à des positions aléatoires
 public class spawnObject : MonoBehaviour
 {
-    public int numberOfObjects = 2;
     public List<GameObject> fishObjects;
 
     void Start()
@@ -21,10 +21,7 @@ public class spawnObject : MonoBehaviour
                 {
                     position = fishObjects[x].GetComponent<FishBehavior>().spawnPos;
                 }
-                FishBehavior newFish = Instantiate(fishObjects[x], position, rotation).GetComponent<FishBehavior>();
-                /*newFish.fishData.swimSpeedMax *= Random.Range(0.9f, 1.1f);
-                newFish.swimSpeedMin *= Random.Range(0.9f, 1.1f);
-                newFish.wanderPeriodDuration *= Random.Range(0.5f,2f);*/
+                Instantiate(fishObjects[x], position, rotation);
             }
         }
     }

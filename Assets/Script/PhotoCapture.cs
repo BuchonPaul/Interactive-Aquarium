@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/* Script qui permet de gérér les photos dans le code
+ */
 public class PhotoCapture : MonoBehaviour
 {
     [Header("Aquarium")]
@@ -43,6 +45,7 @@ public class PhotoCapture : MonoBehaviour
 
     }
 
+   // Cette fonction appellée par le gameManager permet de générer une photo en focntion du poisson cliqué
     public IEnumerator CapturePhoto(string fishName, bool isGood, FishBehavior snapedFish)
     {
         viewingPhoto = true;
@@ -51,7 +54,7 @@ public class PhotoCapture : MonoBehaviour
         photoText.color = Color.black;
         photoText.fontStyle = FontStyles.Normal;
         photoText.text = fishName;
-        if (!isGood )
+        if (!isGood ) // Si ça n'est pas le bon poisson on change le style de l'écriture
         {
             photoText.color = Color.red;
             photoText.fontStyle = FontStyles.Strikethrough;
@@ -70,10 +73,11 @@ public class PhotoCapture : MonoBehaviour
             cameraFlash.SetActive(false);
         }
     }
+
+    // Afficahge de la photo
     void ShowPhoto()    
     {
         photoDisplayArea.sprite = photoSprite;
-        Debug.Log("ZAZA");
         photoFrame.SetActive(true);
         QuizzVisible = true;
 
@@ -85,6 +89,7 @@ public class PhotoCapture : MonoBehaviour
         animator.Play("PhotoFade");
     }
 
+    // Disparition de la photo
     public void RemovePhoto()
     {
         viewingPhoto = false;
@@ -95,7 +100,7 @@ public class PhotoCapture : MonoBehaviour
         }
         else
         {
-            if (QuizzVisible)
+            if (QuizzVisible) // Dans le cas ou il sagit de la photo de la page de quizz, il y a une animation a l'affichage et à la disparition
             {
                 QuizzVisible = false;
                 BCKanimator.Play("PhotoFadeReverse");

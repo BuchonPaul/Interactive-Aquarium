@@ -1,6 +1,7 @@
-using System.Collections;
+    using System.Collections;
 using UnityEngine;
 
+// Script du homard: Le homard avance et récule selon un pattern précis
 public class HomarBehavior : MonoBehaviour
 {
     public FishData fishData;

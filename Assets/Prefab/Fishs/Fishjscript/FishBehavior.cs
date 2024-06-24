@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+
 public class FishBehavior : MonoBehaviour
 {
-    public FishData fishData;
+    public FishData fishData; // Données du poisson
 
-    public Vector3 tankCenterGoal; public float swimSpeedMin = 0.2f;
+    // Variables de configuration pour le comportement du poisson
+    public Vector3 tankCenterGoal;
+    public float swimSpeedMin = 0.2f;
     public float swimSpeedMax = 0.6f;
     public float maxTurnRateY = 15f;
     public float maxWanderAngle = 90f;
@@ -28,27 +31,29 @@ public class FishBehavior : MonoBehaviour
 
     void Start()
     {
-        goalLookRotation = transform.rotation;
+        goalLookRotation = transform.rotation; // Initialisation de la rotation cible
     }
 
     void Update()
     {
         if (isfish)
         {
-            AvoidObstacles();
-            UpdatePosition();
+            AvoidObstacles(); // Éviter les obstacles
+            UpdatePosition(); // Mettre à jour la position
             if (!obstacleDetected)
             {
-                Wander();
+                Wander(); // Errer si aucun obstacle détecté
             }
         }
     }
 
     void Wander()
     {
+        // Calcul de la vitesse de nage en utilisant le bruit de Perlin
         float speedPercent = Mathf.PerlinNoise(Time.time * 0.5f + randomOffset, randomOffset);
         swimSpeed = Mathf.Lerp(swimSpeedMin, swimSpeedMax, Mathf.Pow(speedPercent, 3));
 
+        // Changer la direction à intervalles réguliers
         if (Time.time > wanderPeriodStartTime + wanderPeriodDuration)
         {
             wanderPeriodStartTime = Time.time;
@@ -56,11 +61,13 @@ public class FishBehavior : MonoBehaviour
             goalLookRotation = Quaternion.AngleAxis(randomAngle, Vector3.up) * transform.rotation;
         }
 
+        // Interpoler vers la nouvelle rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, goalLookRotation, Time.deltaTime / 2f);
     }
 
     void AvoidObstacles()
     {
+        // Détecter les obstacles devant le poisson
         float obstacleSensingDistance = swimSpeedMax * detectionDistance;
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, obstacleSensingDistance))
         {
@@ -80,17 +87,20 @@ public class FishBehavior : MonoBehaviour
 
     void UpdatePosition()
     {
+        // Mettre à jour la position du poisson
         transform.position += transform.forward * swimSpeed * Time.deltaTime;
     }
 
     public void TaskOnClick()
     {
+        // Gérer le clic sur le poisson
         Debug.Log("fishName");
         FishSelectedEvent?.Invoke(this, EventSystem.current.currentSelectedGameObject.GetComponent<fishUIButton>().founded);
     }
 
     private void OnDrawGizmos()
     {
+        // Dessiner des gizmos pour visualiser la détection d'obstacles
         Gizmos.color = obstacleDetected ? Color.red : Color.cyan;
         Gizmos.DrawRay(transform.position, transform.forward * (swimSpeedMax * detectionDistance));
         if (obstacleDetected)
@@ -100,3 +110,4 @@ public class FishBehavior : MonoBehaviour
         }
     }
 }
+    

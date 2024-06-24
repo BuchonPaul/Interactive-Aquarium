@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*Code de DEBUG:
+ * Il permet de faire fonctionner le jeu uniquement avec la souris sans utiliser la Kinnect
+ */
 public class OrthoRayCastingScript : MonoBehaviour
 {
     Camera cam;

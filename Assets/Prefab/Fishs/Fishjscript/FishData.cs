@@ -10,8 +10,4 @@ public class FishData : ScriptableObject
     public Sprite clearDesc;
     public Sprite hideDesc;
     public Sprite photo;
-/*    public Sprite siz;
-    public Sprite wei;
-    public Sprite spe;
-    public Sprite col;*/
 }
