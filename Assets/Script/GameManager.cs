@@ -20,11 +20,25 @@ public class GameManager : MonoBehaviour
     public delegate void updateCardEventHandler(int fishId);
     public static event updateCardEventHandler UpdateCardEvent;
 
+    public GameObject leo;
+    public GameObject prof;
     public Image RightPage;
+
+    public AudioClip wrongClip;
+    public AudioClip selectClip;
+    public AudioClip goodClip;
+    public AudioClip ambientClip;
+    private AudioSource audioSource;
 
     void Awake()
     {
         _instance = this;
+    }
+    private void Start()
+    {
+        leo.SetActive(false);
+        prof.SetActive(false);
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
     public static GameManager Instance
     {
@@ -55,17 +69,22 @@ public class GameManager : MonoBehaviour
 
     private void OnFishSelected(FishBehavior fish, bool found)
     {
+        audioSource.PlayOneShot(selectClip);
         if (found)
         {
             fishToFind = null;
             fishToFindName = null;
             RightPage.sprite = fish.fishData.clearDesc;
+            leo.SetActive(false);
+            prof.SetActive(true);
         }
         else
         {
             fishToFind = fish;
             fishToFindName = fish.fishData.name;
             RightPage.sprite = fish.fishData.hideDesc;
+            leo.SetActive(true);
+            prof.SetActive(false);
         }
     }
     private void OnFishCatched(FishBehavior fish)
@@ -81,7 +100,8 @@ public class GameManager : MonoBehaviour
             {
                 StartCoroutine(CameraphotoCapture.CapturePhoto(fishToFindName, true, fish));
                 StartCoroutine(QuizzphotoCapture.CapturePhoto(fishToFindName, true, fish));
-
+                leo.SetActive(false);
+                prof.SetActive(true);
                 Debug.Log("Catched:" + fish.fishId);
                 fishCount += 1;
                 fishToFind = null;
@@ -91,6 +111,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                audioSource.PlayOneShot(wrongClip);
                 StartCoroutine(CameraphotoCapture.CapturePhoto(fishToFindName, false, fish));
             }
             Debug.Log(fishs.Length);

@@ -108,7 +108,8 @@ public class BodySourceView : MonoBehaviour
             Joint sourceJoint = body.Joints[_joint];
             Vector3 targetPosition = GetVector3FromJoint(sourceJoint);
             targetPosition += offset;
-            targetPosition.z *= -1;
+            //targetPosition.z *= -1;
+            targetPosition.x *= -1;
             targetPosition *= zoom;
 /*            targetPosition.y = 3.2f;
 */

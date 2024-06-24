@@ -151,7 +151,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -237,3 +237,4 @@ MonoBehaviour:
   spawnPos: {x: 0, y: 0, z: 0}
   fishId: 3
   swimSpeed: 0
+  isfish: 1
