@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Sar
   description: 
+  lsv: "Ce poisson est de plus en plus fr\xE9quemment observ\xE9 en Manche \xE0 cause
+    du r\xE9chauffement climatique."
   clearSprite: {fileID: 21300000, guid: 3c2cd21d20f28ad4e8e0a5d7e995053b, type: 3}
   hideSprite: {fileID: 21300000, guid: 8580a32b58982d9429edef716007b3ad, type: 3}
-  clearDesc: {fileID: 21300000, guid: 118890c3b48e42648b6fd57658775f99, type: 3}
-  hideDesc: {fileID: 21300000, guid: b3806d9591c94244bb688756ae868a7f, type: 3}
+  clearDesc: {fileID: 21300000, guid: 1ca4c1a78f3fd2141a4f58a3bc8759e4, type: 3}
+  hideDesc: {fileID: 21300000, guid: f20f7b243f41f5d4fb8eb5b22584ebc2, type: 3}
   photo: {fileID: 21300000, guid: d67b3084c600b854e837fd2898a8b754, type: 3}

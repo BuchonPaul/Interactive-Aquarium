@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Homard
   description: 
+  lsv: "En moyenne, le homard mue 10 fois la premi\xE8re ann\xE9e, 3 \xE0 4 fois
+    la deuxi\xE8me, 1 \xE0 2 fois la troisi\xE8me, 1 seule fois ensuite, et apr\xE8s
+    de moins en moins fr\xE9quemment jusqu'\xE0 l'arr\xEAt complet de la croissance."
   clearSprite: {fileID: 21300000, guid: ccca57cbcf5a723499d79a3d9f58cd79, type: 3}
   hideSprite: {fileID: 21300000, guid: 33b4fe2edcf4022499bffecfbb44fbf0, type: 3}
-  clearDesc: {fileID: 21300000, guid: 118890c3b48e42648b6fd57658775f99, type: 3}
-  hideDesc: {fileID: 21300000, guid: b3806d9591c94244bb688756ae868a7f, type: 3}
+  clearDesc: {fileID: 21300000, guid: fc7c072f2812f9943877e76818f972be, type: 3}
+  hideDesc: {fileID: 21300000, guid: 1081d42fd0e36c04fb456414048232ae, type: 3}
   photo: {fileID: 21300000, guid: 2bc699d28e592144b8a0a6ed0db13e2f, type: 3}

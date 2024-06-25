@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Dorade
   description: 
+  lsv: "Sa \xAB couronne \xBB, animal protandre (change de sexe au cours de sa vie,
+    d\u2019abord m\xE2le puis femelle)"
   clearSprite: {fileID: 21300000, guid: 29c8afcc467a3cf42afc00cdce047d39, type: 3}
   hideSprite: {fileID: 21300000, guid: 1558593b962f5b94eab7a59340ab7283, type: 3}
-  clearDesc: {fileID: 21300000, guid: 118890c3b48e42648b6fd57658775f99, type: 3}
-  hideDesc: {fileID: 21300000, guid: b3806d9591c94244bb688756ae868a7f, type: 3}
+  clearDesc: {fileID: 21300000, guid: 58dc0b976a346984cab2c6efb86f2eeb, type: 3}
+  hideDesc: {fileID: 21300000, guid: 680a164ad8a17ae4197db4656e69cbbb, type: 3}
   photo: {fileID: 21300000, guid: edeef4ecb525335469f0af0c41c944fd, type: 3}

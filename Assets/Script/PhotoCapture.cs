@@ -30,6 +30,7 @@ public class PhotoCapture : MonoBehaviour
     public bool QuizzVisible = true;
 
     public TextMeshProUGUI photoText;
+    public TextMeshProUGUI LSVText;
     void Start()
     {
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
@@ -38,7 +39,7 @@ public class PhotoCapture : MonoBehaviour
     void Update()
     {
         timeShoot += Time.deltaTime;
-        if (timeShoot > 2 )
+        if (timeShoot > 5 )
         {
             RemovePhoto();
         }
@@ -60,6 +61,10 @@ public class PhotoCapture : MonoBehaviour
             photoText.fontStyle = FontStyles.Strikethrough;
         }
         photoSprite = snapedFish.fishData.photo;
+        if (LSVText)
+        {
+            LSVText.text = snapedFish.fishData.lsv;
+        }
         ShowPhoto();
         timeShoot = 0;
     }
