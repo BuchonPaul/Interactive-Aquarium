@@ -5600,6 +5600,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e274143c72c0de444895b1145c546acd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17410b72a44397d46a8a89584878001e, type: 2}
     - target: {fileID: 919132149155446097, guid: e274143c72c0de444895b1145c546acd, type: 3}
       propertyPath: m_Name
       value: Rock5
@@ -6908,6 +6912,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 98698837c5b4fe146840bf8e1e432415, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b27fe418b724674bbd15db1a4d98585, type: 2}
     - target: {fileID: 919132149155446097, guid: 98698837c5b4fe146840bf8e1e432415, type: 3}
       propertyPath: m_Name
       value: Rock8
@@ -7538,7 +7546,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d830558b6ce80c499a68d575c97c84c, type: 2}
+  - {fileID: 2100000, guid: f2847ec0221379948a876fec10ec32f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10566,6 +10574,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e274143c72c0de444895b1145c546acd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17410b72a44397d46a8a89584878001e, type: 2}
     - target: {fileID: 919132149155446097, guid: e274143c72c0de444895b1145c546acd, type: 3}
       propertyPath: m_Name
       value: Rock5 (1)
@@ -11028,6 +11040,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: be4e0d75412a6cf42ba69a4bef45a5aa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b27fe418b724674bbd15db1a4d98585, type: 2}
     - target: {fileID: 919132149155446097, guid: be4e0d75412a6cf42ba69a4bef45a5aa, type: 3}
       propertyPath: m_Name
       value: Rock2
