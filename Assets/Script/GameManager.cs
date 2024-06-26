@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public delegate void updateCardEventHandler(int fishId);
     public static event updateCardEventHandler UpdateCardEvent;
 
+    public GameObject returnObj;
     public GameObject leo;
     public GameObject prof;
     public Image RightPage;
@@ -27,7 +28,6 @@ public class GameManager : MonoBehaviour
     public AudioClip wrongClip;
     public AudioClip selectClip;
     public AudioClip goodClip;
-    public AudioClip ambientClip;
     private AudioSource audioSource;
 
     public static GameManager Instance
@@ -101,6 +101,8 @@ public class GameManager : MonoBehaviour
 
             if (fish.fishId == fishToFind.fishId) // Si le poisson avec lequel l'utilisateur a interagi est le bon :
             {
+                audioSource.PlayOneShot(goodClip);
+
                 StartCoroutine(CameraphotoCapture.CapturePhoto(fishToFindName, true, fish));
                 StartCoroutine(QuizzphotoCapture.CapturePhoto(fishToFindName, true, fish));
                 leo.SetActive(false);
@@ -119,8 +121,12 @@ public class GameManager : MonoBehaviour
 
             if (fishs.Length == fishCount) // Si tous les poissons on été trouvés
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                returnObj.SetActive(true);
             }
         }
+    }
+    public void OnApplicationQuit()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

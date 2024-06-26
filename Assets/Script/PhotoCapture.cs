@@ -39,10 +39,21 @@ public class PhotoCapture : MonoBehaviour
     void Update()
     {
         timeShoot += Time.deltaTime;
-        if (timeShoot > 5 )
+        if(isAqua )
         {
-            RemovePhoto();
+            if (timeShoot > 2)
+            {
+                RemovePhoto();
+            }
         }
+        else
+        {
+            if (timeShoot > 5)
+            {
+                RemovePhoto();
+            }
+        }
+
 
     }
 

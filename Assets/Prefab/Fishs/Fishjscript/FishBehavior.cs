@@ -29,9 +29,21 @@ public class FishBehavior : MonoBehaviour
     private Vector3 goalPoint;
     public bool isfish = true;
 
+    public Animator animator;
+    public float animationSpeed = 1.0f;
+    public float animationRotationSpeed = 0.01f;
+    public float maxAnimationSpeed = 0.5f;
+    private Vector3 previousPosition;
+    private Quaternion previousRotation;
+    private float movementSpeed;
+    private float rotationSpeed;
+
     void Start()
     {
         goalLookRotation = transform.rotation; // Initialisation de la rotation cible
+        previousPosition = transform.position;
+        previousRotation = transform.rotation;
+        Wander();
     }
 
     void Update()
@@ -44,6 +56,19 @@ public class FishBehavior : MonoBehaviour
             {
                 Wander(); // Errer si aucun obstacle détecté
             }
+        }
+        Vector3 movement = transform.position - previousPosition;
+        movementSpeed = movement.magnitude / Time.deltaTime;
+        previousPosition = transform.position;
+
+        Quaternion deltaRotation = transform.rotation * Quaternion.Inverse(previousRotation);
+        deltaRotation.ToAngleAxis(out float angle, out Vector3 axis);
+        rotationSpeed = angle / Time.deltaTime;
+        previousRotation = transform.rotation;
+
+        if (animator)
+        {
+            animator.speed = Mathf.Clamp((movementSpeed * animationSpeed) + (rotationSpeed * animationRotationSpeed), 0, maxAnimationSpeed);
         }
     }
 
