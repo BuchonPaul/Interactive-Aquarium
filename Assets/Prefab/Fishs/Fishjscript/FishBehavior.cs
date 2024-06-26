@@ -40,6 +40,8 @@ public class FishBehavior : MonoBehaviour
 
     void Start()
     {
+        randomOffset = Random.Range(0f, 100f);
+        wanderPeriodDuration = wanderPeriodDuration + Random.Range(-0.2f, 0.2f);
         goalLookRotation = transform.rotation; // Initialisation de la rotation cible
         previousPosition = transform.position;
         previousRotation = transform.rotation;

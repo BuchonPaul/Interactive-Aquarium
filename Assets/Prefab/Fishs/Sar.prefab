@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishData: {fileID: 11400000, guid: 9b633ee2ea33fa34fb7a4ccf7dfdc100, type: 2}
-  tankCenterGoal: {x: 0, y: 2, z: 0}
+  tankCenterGoal: {x: 11.5, y: 2, z: 4.7}
   swimSpeedMin: 0.3
   swimSpeedMax: 2.7
   maxTurnRateY: 15

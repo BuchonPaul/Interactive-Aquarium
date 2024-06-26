@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
 
             if (fishs.Length == fishCount) // Si tous les poissons on été trouvés
             {
-                returnObj.SetActive(true);
+                returnObj.GetComponent<CanvasGroup>().alpha = 1;
             }
         }
     }

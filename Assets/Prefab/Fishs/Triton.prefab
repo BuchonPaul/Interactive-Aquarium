@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2b32d85b157f0bf43b2842f30ca44ce4, type: 2}
     - target: {fileID: 919132149155446097, guid: 3937475dca0f7ce4db5e3f3b14abc8fe, type: 3}
       propertyPath: m_Name
-      value: trition2
+      value: trition
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
