@@ -1,28 +1,28 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Fonction qui créé des poissons à des positions aléatoires
 public class spawnObject : MonoBehaviour
 {
-    public GameObject prefab; // GameObject à instancier
-    public int numberOfObjects = 50; // Nombre d'objets à générer
+    public List<GameObject> fishObjects;
 
     void Start()
     {
-        for (int i = 0; i < numberOfObjects; i++)
+        for (int x = 0; x < fishObjects.Count; x++)
         {
-            // Génère des coordonnées aléatoires sur les axes X et Y entre 0 et 1
-            float randomX = Random.Range(-9f, 9f);
-            float randomY = Random.Range(-4f, 4f);
+            for (int i = 0; i < fishObjects[x].GetComponent<FishBehavior>().fishQuantity; i++)
+            {
 
-            // Crée une position en fonction des coordonnées aléatoires
-            Vector3 position = new Vector3(randomX, prefab.transform.position.y, randomY);
-
-            // Génère une rotation aléatoire
-            Quaternion rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
-
-            // Instancie l'objet avec la position et la rotation aléatoires
-            Instantiate(prefab, position, rotation);
+                float randomX = Random.Range(-14f, 14f);
+                float randomY = UnityEngine.Random.Range(-7f, 7f);
+                Vector3 position = new Vector3(randomX, fishObjects[x].transform.position.y, randomY);
+                Quaternion rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+                if (fishObjects[x].GetComponent<FishBehavior>().spawnPos != new Vector3(0, 0, 0))
+                {
+                    position = fishObjects[x].GetComponent<FishBehavior>().spawnPos;
+                }
+                Instantiate(fishObjects[x], position, rotation);
+            }
         }
     }
 }

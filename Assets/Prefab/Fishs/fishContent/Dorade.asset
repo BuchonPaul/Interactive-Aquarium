@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d74a124f08cc064f90f82bee0584c53, type: 3}
+  m_Name: Dorade
+  m_EditorClassIdentifier: 
+  fishName: Dorade
+  description: 
+  lsv: "Sa \xAB couronne \xBB, animal protandre (change de sexe au cours de sa vie,
+    d\u2019abord m\xE2le puis femelle)"
+  clearSprite: {fileID: 21300000, guid: 29c8afcc467a3cf42afc00cdce047d39, type: 3}
+  hideSprite: {fileID: 21300000, guid: 1558593b962f5b94eab7a59340ab7283, type: 3}
+  clearDesc: {fileID: 21300000, guid: 58dc0b976a346984cab2c6efb86f2eeb, type: 3}
+  hideDesc: {fileID: 21300000, guid: 680a164ad8a17ae4197db4656e69cbbb, type: 3}
+  photo: {fileID: 21300000, guid: edeef4ecb525335469f0af0c41c944fd, type: 3}
